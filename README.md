@@ -10,4 +10,5 @@
     * [你不知道的javaScript（上）-作用域-读书笔记](https://github.com/YuFon/blog/issues/1)
     * [你不知道的javaScript（上）-闭包-读书笔记](https://github.com/YuFon/blog/issues/2)
     * [你不知道的javaScript（上）-this-读书笔记](https://github.com/YuFon/blog/issues/3)
+    * [你不知道的javaScript（上）-Object & Prototype-读书笔记](https://github.com/YuFon/blog/issues/4)
 
