@@ -1,4 +1,4 @@
-# 一些笔记
+# 前端小抄
 
 ### 《你不知道的javaScript》 知识提炼
    * [关于作用域和提升](https://github.com/YuFon/blog/issues/1)
