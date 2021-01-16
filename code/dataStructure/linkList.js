@@ -7,17 +7,18 @@ var linkList = function() {
         this.next = null
     }
     linkList.prototype.append = function (data) {
+        var newNode = new Node(data)
         if (this.length === 0) {
-            this.head = new Node(data)
-            return
-        }
-        var current = this.head
+            this.head = newNode
+        } else{
+            var current = this.head
         
-        while(current.next) {
-            current = current.next
+            while(current.next) {
+                current = current.next
+            }
+            current.next = newNode
         }
-        current.next = new Node(data)
-        this.length += 1;
+        this.length += 1
     }
     linkList.prototype.toString = function() {
         var current = this.head;
@@ -27,5 +28,26 @@ var linkList = function() {
             current = current.next
         }
         return result
+    }
+    linkList.prototype.insert = function(data, position) {
+        if (position < 0 || position > this.length) return
+        var current = this.head
+        var newNode = new Node(data)
+        if (position === 0) {
+            this.head = newNode
+            newNode.next = current
+        } else {
+            var index = 1
+            current = this.head.next
+            var preNode = this.head
+            while (index < position) {
+                preNode = current
+                current = current.next
+                index += 1
+            }
+            preNode.next = newNode
+            newNode.next = current
+        }
+        this.length += 1
     }
 }
