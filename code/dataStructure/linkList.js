@@ -90,9 +90,17 @@ var linkList = function() {
         } else if (position === this.length -1) {
             linkList.prototype.get.call(this,position -1).next = null
         } else {
-            var nextNode = linkList.prototype.get.call(this,position + 1)
-            var preNode = linkList.prototype.get.call(this,position -1)
-            preNode.next = nextNode
+            var prev = this.head
+            var current = this.head.next
+            var index = 1
+            while (index < position) {
+                console.log(current)
+                prev = current
+                current = current.next
+                index += 1
+            }
+            console.log(current)
+            prev.next = current.next
         }
         this.length -= 1
         linkList.prototype.toString.call(this)
@@ -115,8 +123,92 @@ var linkList = function() {
         }
     }
 }
-var a = new linkList()
+
+var doublyLinkedList = function() {
+    this.head = null
+    this.tail = null
+    this.length = 0
+
+    var Node = function (data) {
+        this.data = data
+        this.next = null
+        this.prev = null
+    }
+
+    doublyLinkedList.prototype.append = function(data) {
+        var newNode = new Node(data)
+        if (this.length === 0) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            newNode.prev = this.tail
+            this.tail.next = newNode
+            this.tail = newNode
+        }
+        this.length += 1
+    }
+    doublyLinkedList.prototype.forwardToString = function() {
+        var current = this.head
+        var result = ''
+        while (current) {
+            result += current.data + ' '
+            current= current.next
+        }
+        return result
+    }
+    doublyLinkedList.prototype.backwardToString = function() {
+        var current = this.tail
+        var result = ''
+        while (current) {
+            result += current.data + ' '
+            current = current.prev
+        }
+        return result
+    }
+    doublyLinkedList.prototype.insert = function(data, position) {
+        if (position < 0 || position > this.length) return
+        var newNode = new Node(data)
+        if (this.length === 0) {
+            doublyLinkedList.prototype.append.call(this, data)
+            return
+        } else if (position === 0) {
+            console.log('insert0')
+            newNode.next = this.head
+            this.head.prev = newNode
+            this.head = newNode
+            this.length += 1
+            return
+        } else if (position === this.length) {
+            console.log('insert1')
+            doublyLinkedList.prototype.append.call(this, data)
+            return
+        } 
+        if (position >= this.length/2) { // 从后往前查
+            console.log('insert2')
+            var current = this.tail.prev
+            var newPosition = this.length - position
+            var index = 1
+            while (index < newPosition) {
+                current = current.prev
+                index += 1
+            }
+        } else {
+            console.log('insert3')
+            var current = this.head.next
+            var index = 1
+            while (index < position -1) {
+                current = current.next
+                index += 1
+            }
+        }
+        newNode.prev = current
+        newNode.next = current.next
+        current.next = newNode
+        this.length += 1
+    }
+}
+a = new doublyLinkedList()
 a.append(123)
 a.append(234)
-a.insert(456,1)
-a.toString()
+a.append(345)
+a.insert(123, 0)
