@@ -82,10 +82,37 @@ var linkList = function() {
         }
         console.log(linkList.prototype.toString.call(this))
     }
+    linkList.prototype.removeAt = function (position) {
+        if (this.length < 1) return
+        if (position < 0 || position > this.length -1) return
+        if (position === 0) {
+            this.head = this.head.next
+        } else if (position === this.length -1) {
+            linkList.prototype.get.call(this,position -1).next = null
+        } else {
+            var nextNode = linkList.prototype.get.call(this,position + 1)
+            var preNode = linkList.prototype.get.call(this,position -1)
+            preNode.next = nextNode
+        }
+        this.length -= 1
+        linkList.prototype.toString.call(this)
+    }
+    linkList.prototype.remove = function(data) {
+        var current = this.head
+        preNode = null
+        while(current) {
+            if (data === current.data) {
+                preNode.next = current.next
+                this.length -= 1
+                break
+            }
+            preNode = current
+            current = current.next
+        }
+    }
 }
 var a = new linkList()
 a.append(123)
 a.append(234)
 a.insert(456,1)
 a.toString()
-
