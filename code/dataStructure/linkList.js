@@ -102,7 +102,11 @@ var linkList = function() {
         preNode = null
         while(current) {
             if (data === current.data) {
-                preNode.next = current.next
+                if (preNode && preNode.next) {
+                    preNode.next = current.next
+                } else {
+                    this.head = current.next
+                }
                 this.length -= 1
                 break
             }
