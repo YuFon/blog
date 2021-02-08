@@ -14,4 +14,4 @@ _（注：并不会对书本里的知识进行太多的复述，只是对书本�
    * [闭包不是立即执行函数，聊聊闭包和作用域](https://github.com/YuFon/blog/issues/2)
    * [this去哪儿，this的四种绑定规则以及this的丢失](https://github.com/YuFon/blog/issues/3)
    * [Object & Prototype](https://github.com/YuFon/blog/issues/4)
-   * [ES6新特性](https://github.com/YuFon/blog/issues/4)
+   * [ES6新特性](https://github.com/YuFon/blog/issues/9)
