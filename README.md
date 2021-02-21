@@ -18,4 +18,4 @@
        * [语法](https://github.com/YuFon/blog/issues/9)
 
 ### 基本算法
-   * [排序算法](https://github.com/YuFon/blog/issues/9)
+   * [排序算法](https://github.com/YuFon/blog/issues/10)
