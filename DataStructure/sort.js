@@ -58,14 +58,14 @@ class ArrayList {
             console.log(`gap=${gap}`)
             console.log(`before:${this.list}`)
             for (let i = 0; i < this.length - gap; i += 1) {
+                let temp = this.list[i]
                 let j = i
                 while ((this.list[j] > this.list[j + gap]) && (j < this.length - gap)) {
-                    console.log(`change: ${this.list[j]} <->${this.list[j + gap]}, index: ${j} <-> ${j + gap}`)
-                    this.swap(j, j + gap)
+                    this.list[j] = this.list[j + gap]
                     j += gap
                 }
+                this.list[j] = temp
             }
-            console.log(`after:${this.list}`)
             gap = Math.floor(gap / 2)
         }
         return this.list
@@ -121,5 +121,5 @@ class ArrayList {
     }
 }
 
-const a = new ArrayList([10,1,3,5,4,9,6,8,7,5,6,4,5,10,9,15,100,12,13,17,4,5,6,9,4,109])
-a.shellSort();
+const a = new ArrayList([10,1,3,5,4,9,6,8,7,5,6,5,10,9,15,100,12,13,17,4,5,6,9,4,109])
+a.quickSort();
