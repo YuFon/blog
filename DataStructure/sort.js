@@ -17,7 +17,6 @@ class ArrayList {
                     this.swap(j, j - 1)
                 }
             }
-            console.log(this.list)
         }
         return this.list
     }
