@@ -55,14 +55,12 @@ class ArrayList {
     shellSort() {
         let gap = Math.floor(this.length / 2)
         while (gap >= 1)  {
-            console.log(`gap=${gap}`)
-            console.log(`before:${this.list}`)
-            for (let i = 0; i < this.length - gap; i += 1) {
+            for (let i = gap; i < this.length; i += 1) { // 间隔为gap做插入排序
                 let temp = this.list[i]
                 let j = i
-                while ((this.list[j] > this.list[j + gap]) && (j < this.length - gap)) {
-                    this.list[j] = this.list[j + gap]
-                    j += gap
+                while ((temp < this.list[j - gap]) && (j > gap -1)) { // j-gap位置的元素比temp大，j-gap的位置后移至j
+                    this.list[j] = this.list[j - gap]
+                    j -= gap
                 }
                 this.list[j] = temp
             }
@@ -122,4 +120,4 @@ class ArrayList {
 }
 
 const a = new ArrayList([10,1,3,5,4,9,6,8,7,5,6,5,10,9,15,100,12,13,17,4,5,6,9,4,109])
-a.quickSort();
+a.shellSort();
