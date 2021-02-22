@@ -11,12 +11,13 @@ class ArrayList {
     }
 
     bubbleSort() {
-        for (let i = 1; i < this.length - 1; i += 1) {
-            for (let j = this.length - 1; j > i + 1; j -= 1) {
+        for (let i = 0; i < this.length - 1; i += 1) {
+            for (let j = this.length - 1; j > i; j -= 1) {
                 if (this.list[j] < this.list[j - 1]) {
                     this.swap(j, j - 1)
                 }
             }
+            console.log(this.list)
         }
         return this.list
     }
