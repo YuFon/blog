@@ -112,6 +112,14 @@ class BinarySearchTree {
         return current.key
     }
 
+    _toString(node, result) {
+        if (node === null) return
+        result.push(node.key)
+        if (node.left) result.push(node.left.key)
+        if (node.right) result.push(node.right.key)
+        this._toString(node.left, result)
+        this._toString(node.right, result)
+    }
     hasKey(key) {
         if (this.root === null) return null
         let current = this.root
@@ -166,11 +174,16 @@ class BinarySearchTree {
         } else { // 4. 左右节点都有 这时候要找这个节点的前驱或者后继（左子树中最大值或者右子树中最小值）来做新的节点
             // 先找新节点，这里我们就找前驱
             let nextNode = current.left
-            while (nextNode !== null) {
+            while (nextNode.right !== null) {
                 nextNode = nextNode.right // 左子树的最大值，朝右边找
             }
-            // 
+            // 前驱一定没有右子节点了，这时要把被删除的节点的右子节点给接过来
             nextNode.right = current.right
+            if (this.root === current) {
+                this.root = nextNode
+            } else {
+                parent[isleft? 'left': 'right'] = nextNode
+            }
         }
     }
 }
