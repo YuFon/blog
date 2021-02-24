@@ -130,17 +130,48 @@ class BinarySearchTree {
         if (this.root === null) return false
         let current = this.root
         let parent = null
+        let isleft = true
         while(current.key !== key) {
             if (current === null) return false
             if (current.key < key) {
                 parent = current
                 current = current.right
+                isleft= false
             } else {
                 parent = current
                 current = current.left
+                isleft = true
             }
         }
-        if (current.left === null && current.right === null)
+        // 1.是叶子结点
+        if (current.left === null && current.right === null) {
+            // 1.1是根节点
+            if (this.root === current) {
+                this.root = null
+            } else { // 1.2不是根节点
+                parent[isleft? 'left': 'right'] = null
+            }
+        } else if (current.right === null) { // 2.被删元素只有左子节点
+            if (this.root === current) {
+                this.root = current.left
+            } else {
+                parent[isleft? 'left': 'right'] = current.left
+            }
+        } else if (current.left === null) {
+            if (this.root === current) {
+                this.root = current.right
+            } else {
+                parent[isleft? 'left': 'right'] = current.right
+            }
+        } else { // 4. 左右节点都有 这时候要找这个节点的前驱或者后继（左子树中最大值或者右子树中最小值）来做新的节点
+            // 先找新节点，这里我们就找前驱
+            let nextNode = current.left
+            while (nextNode !== null) {
+                nextNode = nextNode.right // 左子树的最大值，朝右边找
+            }
+            // 
+            nextNode.right = current.right
+        }
     }
 }
 
