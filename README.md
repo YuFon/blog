@@ -2,7 +2,7 @@
 ### 项目实战
   * [移动端webm录制视频方案](https://github.com/YuFon/blog/issues/8)
 ### JS基础
-  * [es5,es6是如何模拟Class的](https://github.com/YuFon/blog/issues/7)
+  * [new做了哪些事情，es5/es6是如何模拟Class的](https://github.com/YuFon/blog/issues/7)
 
 ### 前端需要了解的HTTP知识
   * [从我们访问一个网址，HTTPS在其中做了什么？浅谈HTTPS协议](https://github.com/YuFon/blog/issues/5)
