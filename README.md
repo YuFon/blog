@@ -4,6 +4,7 @@
 
 ### 读读源码
   * [虚拟dom算法库-snabbdom](https://github.com/YuFon/blog/issues/11)
+  * [Vue数据响应原理](https://github.com/YuFon/blog/issues/12)
 
 ### 基本算法
    * [排序算法](https://github.com/YuFon/blog/issues/10)
