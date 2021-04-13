@@ -4,9 +4,6 @@
   * [虚拟dom算法库-snabbdom](https://github.com/YuFon/blog/issues/11)
   * [Vue数据响应原理](https://github.com/YuFon/blog/issues/12)
 
-### 学习笔记
-   * [react学习之路-01,组件三大核心属性](https://github.com/YuFon/blog/issues/13)
-
 ### 项目实战
   * [移动端webm录制视频方案](https://github.com/YuFon/blog/issues/8)
 
