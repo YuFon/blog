@@ -12,6 +12,7 @@
    * [排序算法](https://github.com/YuFon/blog/issues/10)
 
 ### JS基础
+  * [9个例子由浅入深聊闭包](https://github.com/YuFon/blog/issues/15)
   * [new做了哪些事情，es5/es6是如何模拟Class的](https://github.com/YuFon/blog/issues/7)
 
 ### 前端需要了解的HTTP知识
