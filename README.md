@@ -1,6 +1,7 @@
 # 前端小抄
 ### React Hooks 一把嗦
   * [ReactHooks](https://github.com/YuFon/blog/issues/14)
+  * [使用React.memo来优化你的函数组件](https://github.com/YuFon/blog/issues/15)
 ### 读读源码
   * [虚拟dom算法库-snabbdom](https://github.com/YuFon/blog/issues/11)
   * [Vue数据响应原理](https://github.com/YuFon/blog/issues/12)
